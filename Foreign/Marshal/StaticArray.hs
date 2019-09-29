@@ -64,7 +64,7 @@ newtype StaticArray backing dimensions (elements :: *) =
         -- | Returns the backing value of this 'StaticArray'.
         toArray :: backing (Index dimensions) elements
         }
-    deriving (Eq, Typeable)
+    deriving (Typeable)
 
 instance (IArray b e, IxStatic d, Show e) => Show (StaticArray b d e) where
     show = ("listStaticArray " ++) . show . elems . toArray
